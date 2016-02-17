@@ -1,0 +1,13 @@
+# Mac OS X
+.DS_Store
+
+# Generated Files
+*.[oa]
+*.py[co]
+
+# Annoying tilde backup files
+*~
+
+node_modules/
+npm-debug.log
+production.json
