@@ -1,5 +1,5 @@
 /**
- * Routing module for handling all routes under /api
+ * Routing module for handling all routes under /users
  */
 
 /**
