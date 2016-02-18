@@ -5,23 +5,14 @@
 /**
  * Import core modules
  */
-var router = require('express').Router();
 
-/**
- * Import database connector business logic layer module
- */
-var dbLogic = require('../models/logic/dbLogic.js');
+var express = require('express');
+var router  = express.Router();
 
-router.get('/users', function(request, response, next) {
+router.use('/users', require('./users'));
 
-  dbLogic.getUsers().then(function(result) {
-    console.log("Route Then");
-    response.json(result);
-  }).catch(function(error) {
-    console.log("Route Catch");
-    console.log({"error": error});
-    response.json({"error": error});
-  });
+router.get('/', function(request, response) {
+  response.json({"made it": "ok"});
 });
 
-module.exports = router
+module.exports = router;
