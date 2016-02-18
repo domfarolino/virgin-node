@@ -4,8 +4,9 @@ var fs        = require("fs");
 var path      = require("path");
 var Sequelize = require("sequelize");
 var env       = process.env.NODE_ENV || "development";
-var config    = require('config')['database-configuration'];
-var sequelize = new Sequelize("mysql://root:root@localhost/material-message-board");
+var config    = require('config');
+var dbconfig  = config.get('database-configuration');
+var sequelize = new Sequelize("mysql://" + dbconfig.user + ":" + dbconfig.pass + "@" + dbconfig.host + "/" + dbconfig.name);
 var db        = {};
 
 fs
